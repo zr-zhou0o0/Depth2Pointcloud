@@ -44,6 +44,15 @@ vis_pnts 与 raw model 对应
 注意raw model 移动到blender里面会自动旋转90度 取消这个旋转就可以对上了
 
 
+生成2D bbox
+tar -czvf output_dataset.tar.gz data/outputs/dataset
+
+参考 front3D_dataloader 和 data_process 代码, 帮我写一段生成2dbbox并可视化的代码. 给定文件夹根目录,下面每条物体数据文件夹{uid1}-{uid2}-{obj_id:6}内部都有一个metadata,metadata的 "obj_dict" 下面有 物体index (例如"0"或者"1"),物体index下面有"bbox_2d_from_3d";帮我可视化这个bbox2d, 读取full_rgb, 把整张图片变成白色,只有bbox内部是黑色的. 注意这个bbox 2d实际上是 8个3d bbox顶点到2d的投影,所以是8个点.需要根据这八个点的2d坐标找到正方体的投影.
+
+
+python scripts/generate_amodal_mask.py --dataset-root data/outputs/test
+
+
 # TODO
 1. 有时间的话其实可以把 data_process 和 depth_to_pointcloud 封装成一个类 想要什么就挪什么
 
