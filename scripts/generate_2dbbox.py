@@ -80,7 +80,7 @@ def generate_amodal_mask(object_dir: Path) -> None:
 
     bbox_mask_path = object_dir / "2dbbox.png"
     vis_mask_path = object_dir / "vis_mask.png"
-    output_path = object_dir / "amodal_mask.png"
+    output_path = object_dir / "occ_mask.png"
 
     if not bbox_mask_path.exists():
         print(f"Skip amodal mask for {object_dir}: 2dbbox.png missing")

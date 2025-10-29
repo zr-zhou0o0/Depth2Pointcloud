@@ -3,3 +3,8 @@ nohup python data_process.py --raw-root data/raw --output-root data/outputs/data
 nohup python depth_to_pointcloud.py --dataset-root data/outputs/dataset --overwrite > nohup-2.out 2>&1 &
 
 # nohup  >  2>&1 &
+
+
+python scripts/generate_2dbbox.py --dataset-root data/outputs/test
+
+python scripts/generate_amodal3r_data.py --dataset-root data/outputs/test
